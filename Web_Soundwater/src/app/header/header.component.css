@@ -1,0 +1,41 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .title {
+    color: #030303;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 700;
+    line-height: 24.5px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .username {
+    color: #030303;
+    font-size: 15px;
+    font-family: "Roboto";
+    line-height: 22.5px;
+  }
+  
+  .avatar {
+    top: 14px;
+    left: 1386px;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;    
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+  }
+  

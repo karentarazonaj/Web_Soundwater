@@ -1,0 +1,12 @@
+<nav class="sidebar">
+    <ul>
+      <li class="text" *ngFor="let item of menuItems" 
+          (click)="selectItem(item)" 
+          [class.active]="selectedItem === item">
+        {{ item }}
+      </li>
+    </ul>
+    <br><br>
+    <a class="logout text" (click)="logout()">Cerrar sesión</a>
+</nav>
+  
