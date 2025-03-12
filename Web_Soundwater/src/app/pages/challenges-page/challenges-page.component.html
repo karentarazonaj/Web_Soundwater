@@ -1,1 +1,49 @@
-<p>challenges-page works!</p>
+<app-header></app-header>
+<div class="container">
+  <app-sidebar></app-sidebar>
+  <main class="content">
+    <div class="">
+      <div class="title">Configurar Desafíos</div>
+      <p class="text">
+        Aquí usted podrá crear desafíos de beber agua a sus usuarios de Sound Water.
+      </p>
+
+      <form [formGroup]="mensajeForm" (ngSubmit)="guardarMensaje()">
+        <!-- Nombre Desafío -->
+        <input formControlName="nombre" class="input-custom"
+          [ngClass]="{'invalid': mensajeForm.get('nombre')?.invalid && mensajeForm.get('nombre')?.touched}"
+          placeholder="Nombre desafío">
+        <div *ngIf="mensajeForm.get('nombre')?.invalid && mensajeForm.get('nombre')?.touched" class="error">
+          El nombre del desafío es obligatorio y no debe superar los 100 caracteres.
+        </div>
+        <!-- Fecha Inicio -->
+        <input type="date" formControlName="fechaInicio" class="input-custom"
+          [ngClass]="{'invalid': mensajeForm.get('fechaInicio')?.invalid && mensajeForm.get('fechaInicio')?.touched}"
+          placeholder="Fecha inicio">
+        <div *ngIf="mensajeForm.get('fechaInicio')?.invalid && mensajeForm.get('fechaInicio')?.touched" class="error">
+          La fecha de inicio es obligatoria.
+        </div>
+
+        <!-- Fecha Fin -->
+        <input type="date" formControlName="fechaFin" class="input-custom"
+          [ngClass]="{'invalid': mensajeForm.get('fechaFin')?.invalid && mensajeForm.get('fechaFin')?.touched}"
+          placeholder="Fecha fin">
+        <div *ngIf="mensajeForm.get('fechaFin')?.invalid && mensajeForm.get('fechaFin')?.touched" class="error">
+          La fecha de fin es obligatoria.
+        </div>
+
+        <!-- Descripcion -->
+        <textarea formControlName="descripcion" class="input-custom"
+          [ngClass]="{'invalid': mensajeForm.get('descripcion')?.invalid && mensajeForm.get('descripcion')?.touched}"
+          placeholder="Descripción"></textarea>
+        <div *ngIf="mensajeForm.get('descripcion')?.invalid && mensajeForm.get('descripcion')?.touched" class="error">
+          La descripción es obligatorio y no debe superar los 200 caracteres.
+        </div>
+
+        <!-- Botón de Guardar -->
+        <button type="submit" class="full-width" [disabled]="mensajeForm.invalid">Guardar</button>
+      </form>
+    </div>
+  </main>
+</div>
+<app-footer></app-footer>

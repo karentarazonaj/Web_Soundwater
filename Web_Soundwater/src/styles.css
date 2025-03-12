@@ -2,3 +2,132 @@
 .screen {
     background-color: #f0f8ff;
   }
+
+  /*Estilos Generales para el contenido central de las paginas*/
+  .container {
+    display: flex;
+    height: 100vh;
+    background-color: #F0F8FF;
+  }
+  
+  app-sidebar {
+    width: 25%;
+    background-color: #f8f9fa;
+  }
+  
+  .content{
+    width: 75%;
+    color: #030303;
+    font-size: 64px;
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: 83px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px 30px 30px;
+    overflow-y: auto; /* Habilita el scroll vertical */
+  }
+
+  .contentwelcome {
+    width: 75%;
+    color: #030303;
+    font-size: 64px;
+    font-family: "Roboto";
+    font-weight: 500;
+    line-height: 83px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    color: #6b7280;
+    font-size: 15px;
+    font-family: "Roboto";
+    line-height: 21px;
+  }
+  
+  .title {
+    color: #030303;
+    font-size: 21px;
+    font-family: "Roboto";
+    line-height: 28px;
+  }
+
+ 
+/* Botón de guardar */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.input-custom {
+  width: 97%;
+  padding: 18px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  transition: 0.3s;
+  margin-bottom: 0;
+  margin-top: 0;
+  resize: none;
+}
+
+textarea.input-custom {
+  height: 80px; /* Ajusta la altura */
+  resize: none; /* Evita que el usuario lo haga más grande */
+  margin-top: 40px;
+}
+
+.input-custom:focus {
+  border-color: #007bff;
+}
+
+.invalid {
+  border-color: red !important;
+  background-color: #ffe6e6;
+}
+
+.error {
+  display: block; 
+  font-size: 14px; 
+  color: red; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.full-width {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.full-width:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

@@ -1,9 +1,9 @@
 <nav class="sidebar">
     <ul>
-      <li class="text" *ngFor="let item of menuItems" 
+      <li class="textsidebar" *ngFor="let item of menuItems" 
           (click)="selectItem(item)" 
-          [class.active]="selectedItem === item">
-        {{ item }}
+          [class.active]="isActive(item.route)">
+        {{ item.label }}
       </li>
     </ul>
     <br><br>

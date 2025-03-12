@@ -7,12 +7,13 @@
     background-color: white;
   }
   
-  .title {
+  .titleheader {
     color: #030303;
     font-size: 18px;
     font-family: "Roboto";
     font-weight: 700;
     line-height: 24.5px;
+    cursor: pointer; 
   }
   
   .user-info {
