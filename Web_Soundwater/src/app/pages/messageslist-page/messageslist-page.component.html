@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="container">
+    <app-sidebar></app-sidebar>
+    <main class="content">
+        <div class="">
+            <div class="title">Lista de Mensajes Motivacionales</div>
+            <p class="text">
+                Aquí usted podrá ver todos los mensajes motivacionales que se reflejarán como una notificación, con la
+                intención de incentivar el consumo de agua.
+            </p>
+            <div class="paneles">
+                <div class="panel">
+                    <div class="card">
+                        <div class="text-container">
+                          <div class="vigencia"><strong>Vigencia:</strong> 25/02/2025 al 31/03/2025</div>
+                          <div class="descripcion">Cada sorbo de agua es un regalo para tu ...</div>
+                        </div>
+                        <div class="buttons">
+                          <button class="btn editar">Editar</button>
+                          <button class="btn borrar">Borrar</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="panel">
+                    <div class="title2">Editar Mensaje</div>
+                    <form [formGroup]="mensajeForm" (ngSubmit)="guardarMensaje()">
+                        <!-- Fecha Inicio -->
+                        <input type="date" formControlName="fechaInicio" class="input-custom"
+                            [ngClass]="{'invalid': mensajeForm.get('fechaInicio')?.invalid && mensajeForm.get('fechaInicio')?.touched}"
+                            placeholder="Fecha inicio">
+                        <div *ngIf="mensajeForm.get('fechaInicio')?.invalid && mensajeForm.get('fechaInicio')?.touched"
+                            class="error">
+                            La fecha de inicio es obligatoria.
+                        </div>
+
+                        <!-- Fecha Fin -->
+                        <input type="date" formControlName="fechaFin" class="input-custom"
+                            [ngClass]="{'invalid': mensajeForm.get('fechaFin')?.invalid && mensajeForm.get('fechaFin')?.touched}"
+                            placeholder="Fecha fin">
+                        <div *ngIf="mensajeForm.get('fechaFin')?.invalid && mensajeForm.get('fechaFin')?.touched"
+                            class="error">
+                            La fecha de fin es obligatoria.
+                        </div>
+
+                        <!-- Mensaje -->
+                        <textarea formControlName="mensaje" class="input-custom"
+                            [ngClass]="{'invalid': mensajeForm.get('mensaje')?.invalid && mensajeForm.get('mensaje')?.touched}"
+                            placeholder="Mensaje"></textarea>
+                        <div *ngIf="mensajeForm.get('mensaje')?.invalid && mensajeForm.get('mensaje')?.touched"
+                            class="error">
+                            El mensaje es obligatorio y no debe superar los 200 caracteres.
+                        </div>
+
+                        <!-- Botón de Guardar -->
+                        <button type="submit" class="full-width" [disabled]="mensajeForm.invalid">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
